@@ -1,7 +1,7 @@
 
 # Node JS Boilerplate
 
-> Repo will be usefull to setup NodeJS project with mongoDB as database and HBS and render engine this repo already has template setup for your user
+> Repo will be usefull to setup NodeJS project with mongoDB as database and hadelbar as render engine this repo already has template setup for your user
 
 
 ---
