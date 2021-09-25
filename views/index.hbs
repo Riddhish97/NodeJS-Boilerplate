@@ -1,0 +1,181 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Match Details</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Match Details</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            {{#if matchWinnerCount}}
+            {{#each matchWinnerCount}}
+            <div class="col-12 col-sm-4">
+                <div class="small-box {{#compare @index ">" 0}}bg-success{{else}}bg-info{{/compare}}">
+                    <div class="inner">
+                        <h3>{{#compare team1Count ">" team2Count}}{{team1Count}}{{else}}{{team2Count}}{{/compare}}</h3>
+
+                        <p>{{_id}} Wins</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas ion ion-stats-bars"></i>
+                    </div>
+                </div>
+                {{!-- <div class="info-box bg-light">
+                    <div class="info-box-content">
+                        <span class="info-box-text text-center text-muted">{{_id}} Wins</span>
+                        <span class="info-box-number text-center text-success mb-0">{{#compare team1Count ">"
+                            team2Count}}{{team1Count}}{{else}}{{team2Count}}{{/compare}}</span>
+                    </div>
+                </div> --}}
+            </div>
+            {{/each}}
+            {{/if}}
+            {{!-- {{#if matchPlayerCount}}
+            <div class="col-12 col-sm-4">
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Donut Chart</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                    class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                    class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chartjs-size-monitor">
+                            <div class="chartjs-size-monitor-expand">
+                                <div class=""></div>
+                            </div>
+                            <div class="chartjs-size-monitor-shrink">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <canvas id="donutChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block;"
+                            width="457" height="250" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>
+            {{/if}} --}}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Select Both Team</h3>
+                    </div>
+                    <form action="" method="GET">
+                        <div class="row m-3">
+                            <div class="col-md-4">
+                                <select class="form-control" name="team1">
+                                    <option>Select Team One</option>
+                                    <option {{#compare team1 "==" "Royal Challengers Bangalore" }}selected="selected"
+                                        {{/compare}} value="Royal Challengers Bangalore">Royal Challengers Bangalore
+                                    </option>
+                                    <option {{#compare team1 "==" "Sunrisers Hyderabad" }}selected="selected"
+                                        {{/compare}} value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                                    <option {{#compare team1 "==" "Delhi Capitals" }}selected="selected" {{/compare}}
+                                        value="Delhi Capitals">Delhi Capitals</option>
+                                    <option {{#compare team1 "==" "Kings XI Punjab" }}selected="selected" {{/compare}}
+                                        value="Kings XI Punjab">Kings XI Punjab</option>
+                                    <option {{#compare team1 "==" "Kolkata Knight Riders" }}selected="selected"
+                                        {{/compare}} value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                                    <option {{#compare team1 "==" "Mumbai Indians" }}selected="selected" {{/compare}}
+                                        value="Mumbai Indians">Mumbai Indians</option>
+                                    <option {{#compare team1 "==" "Chennai Super Kings" }}selected="selected"
+                                        {{/compare}} value="Chennai Super Kings">Chennai Super Kings</option>
+                                    <option {{#compare team1 "==" "Rajasthan Royals" }}selected="selected" {{/compare}}
+                                        value="Rajasthan Royals">Rajasthan Royals</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" name="team2">
+                                    <option>Select Team Two</option>
+                                    <option {{#compare team2 "==" "Royal Challengers Bangalore" }}selected="selected"
+                                        {{/compare}} value="Royal Challengers Bangalore">Royal Challengers Bangalore
+                                    </option>
+                                    <option {{#compare team2 "==" "Sunrisers Hyderabad" }}selected="selected"
+                                        {{/compare}} value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                                    <option {{#compare team2 "==" "Delhi Capitals" }}selected="selected" {{/compare}}
+                                        value="Delhi Capitals">Delhi Capitals</option>
+                                    <option {{#compare team2 "==" "Kings XI Punjab" }}selected="selected" {{/compare}}
+                                        value="Kings XI Punjab">Kings XI Punjab</option>
+                                    <option {{#compare team2 "==" "Kolkata Knight Riders" }}selected="selected"
+                                        {{/compare}} value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                                    <option {{#compare team2 "==" "Mumbai Indians" }}selected="selected" {{/compare}}
+                                        value="Mumbai Indians">Mumbai Indians</option>
+                                    <option {{#compare team2 "==" "Chennai Super Kings" }}selected="selected"
+                                        {{/compare}} value="Chennai Super Kings">Chennai Super Kings</option>
+                                    <option {{#compare team2 "==" "Rajasthan Royals" }}selected="selected" {{/compare}}
+                                        value="Rajasthan Royals">Rajasthan Royals</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-info  w-100">Get Details</button>
+                            </div>
+                            <div class="col-md-2"><a href="/" class="btn btn-danger w-100">Reset</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <table class="table table-striped dataTable">
+                            <thead>
+                                <tr>
+                                    {{!-- <th>Season</th> --}}
+                                    {{sorting_url current_url 'season' 'Season'}}
+                                    <th>Team 1</th>
+                                    <th>Team 2</th>
+                                    {{sorting_url current_url 'winner' 'Winner'}}
+                                    {{!-- <th>Winner</th> --}}
+                                    <th>Player Of Match</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#if match}}
+                                {{#each match}}
+                                <tr>
+                                    <td><span class="badge badge-info badge-sm right">{{season}}</span></td>
+                                    <td>{{team1}}</td>
+                                    <td>{{team2}}</td>
+                                    <td> <span class="text-bold text-success">{{winner}}</span></td>
+                                    <td>{{player_of_match}}</td>
+                                </tr>
+                                {{/each}}
+                                {{else}}
+                                <tr>
+                                    <td class="text-center" colspan="100%">No match data found</td>
+                                </tr>
+                                {{/if}}
+                            </tbody>
+                        </table>
+                        {{!-- {{#if pagination.totalPage}}
+                        <div class="col-md-12">
+                            {{pagination pagination}}
+                        </div>
+                        {{/if}}
+                        {{#if match}}
+                        <span class="text-left text-muted">Display {{start_record}} to {{end_record}}
+                            records out of
+                            {{total_records}}</span>
+                        {{/if}} --}}
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
