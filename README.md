@@ -1,10 +1,8 @@
 
-# IPL Statistics
+# Node JS Boilerplate
 
-> Project has team vise IPL statistics from 2008-2019 match
+> Repo will be usefull to setup NodeJS project with mongoDB as database and HBS and render engine this repo already has template setup for your user
 
-
-![IPL](./public/images/dashboard.png)
 
 ---
 
@@ -30,7 +28,7 @@ What things you need to install the software and how to install them
 - npm v6.4.1+
 ## Installation
 ```shell
-$ git clone https://github.com/Riddhish97/IPL2020.git
+$ git clone https://github.com/Riddhish97/NodeJS-Boilerplate.git
 $ npm install
 ```
 > Create file from sample file
@@ -39,10 +37,9 @@ $ npm install
 - Create databse.js file from database.sample.js
 
 Note - Default port for mongoDB is 27017 if you have mongoDb running on different port please update it in database.js
-> Run this below command which will create user in mongoDB and store data in your DB
+> Run this below command which will create user in mongoDB.
 ```shell
 $ node scripts/initScripts.js
-$ node scripts/storeDataInDB.js  
 ```
 > Run the project
 ```shell
