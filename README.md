@@ -50,7 +50,7 @@ $ node bin/www
 ```shell
 $ docker-compose up -d --build 
 ```
-Project will start on `3006` port. You can update port in `docker-compose.yml` for project and mongoDB in case of docker.
+Project will start on `3000` port. You can update port in `docker-compose.yml` for project and mongoDB in case of docker.
 
 ---
 
